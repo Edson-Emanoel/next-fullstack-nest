@@ -1,20 +1,101 @@
-GET http://localhost:3001/produtos
+############## PRODUTOS
 
+      GET http://localhost:3001/produtos
 
-###
-POST http://localhost:3001/produtos
-content-type: application/json
+      ###
+      POST http://localhost:3001/produtos
+      content-type: application/json
 
-{
-      "name": "Notebook",
-      "descricao": "Notebook Top das galáxias",
-      "preco": 3500.00
-}
+      {
+            "nome": "Notebook",
+            "descricao": "Notebook Top das galáxias",
+            "preco": 3500.00
+      }
 
-###
-PATCH http://localhost:3001/produtos
-content-type: application/json
+      ###
+      PATCH http://localhost:3001/produtos/1
+      content-type: application/json
 
-{
-      "name": "Notebook Gamer"
-}
+      {
+            "nome": "Notebook Gamer"
+      }
+
+      ###
+      PUT http://localhost:3001/produtos/1
+      content-type: application/json
+
+      {
+            "nome": "Notebook Gamer",
+            "preco": 150
+      }
+
+      ###
+      DELETE http://localhost:3001/produtos/1
+      content-type: application/json
+
+############## CATEGORIAS
+
+      GET http://localhost:3001/categoria
+
+      ###
+      POST http://localhost:3001/categoria
+      content-type: application/json
+
+      {
+            "nome": "Consoles",
+            "descricao": "Consoles de várias empresas"
+      }
+
+      ###
+      PATCH http://localhost:3001/categoria/1
+      content-type: application/json
+
+      {
+            "nome": "Consoles"
+      }
+
+      ###
+      PUT http://localhost:3001/categoria/1
+      content-type: application/json
+
+      {
+            "nome": "Consoles da Nintendo",
+            "descricao": "Consoles de uma única empresa a BIG N"
+      }
+
+      ###
+      DELETE http://localhost:3001/categoria/1
+      content-type: application/json
+
+############## FILMES
+
+      GET http://localhost:3001/filme
+
+      ###
+      POST http://localhost:3001/filme
+      content-type: application/json
+      {
+            "titulo": "O Máskara 2",
+            "duração_minutos": 202,
+            "descricao": "A vida do tímido e socialmente desajeitado bancário Stanley Ipkiss muda completamente quando ele encontra no mar uma máscara que possui o espírito do deus escandinavo Loki."
+      }
+
+      ###
+      PATCH http://localhost:3001/filme/1
+      content-type: application/json
+      {
+            "titulo": "O filho do do Máskara"
+      }
+
+      ###
+      PUT http://localhost:3001/filme/1
+      content-type: application/json
+      {
+            "titulo": "O Máskara 2",
+            "duração_minutos": 202,
+            "descricao": "A vida do tímido e socialmente desajeitado bancário Stanley Ipkiss muda completamente quando ele encontra no mar uma máscara que possui o espírito do deus escandinavo Loki."
+      }
+
+      ###
+      DELETE http://localhost:3001/filme/1
+      content-type: application/json

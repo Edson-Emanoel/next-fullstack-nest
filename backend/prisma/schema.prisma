@@ -13,3 +13,16 @@ model Produto {
   descricao String
   preco     Float
 }
+
+model Categoria {
+  id Int @id @default(autoincrement())
+  nome String
+  descricao String
+}
+
+model Filme {
+  id Int @id @default(autoincrement())
+  titulo String
+  duração_minutos Int
+  descricao String
+}
