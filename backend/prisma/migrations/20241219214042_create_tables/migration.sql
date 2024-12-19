@@ -26,3 +26,24 @@ CREATE TABLE `Filme` (
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Pessoa` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `nome` VARCHAR(191) NOT NULL,
+    `idade` INTEGER NOT NULL,
+    `escola` BOOLEAN NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `Pokemon` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `nome` VARCHAR(191) NOT NULL,
+    `tipo` VARCHAR(191) NOT NULL,
+    `nivel` INTEGER NOT NULL,
+    `treinador` VARCHAR(191) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

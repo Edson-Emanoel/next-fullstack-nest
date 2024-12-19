@@ -26,3 +26,18 @@ model Filme {
   duração_minutos Int
   descricao String
 }
+
+model Pessoa {
+  id Int @id @default(autoincrement())
+  nome String
+  idade Int
+  escola Boolean
+}
+
+model Pokemon{
+  id Int @id @default(autoincrement())
+  nome String
+  tipo String
+  nivel String
+  treinador String
+}

@@ -21,15 +21,6 @@
       }
 
       ###
-      PUT http://localhost:3001/produtos/1
-      content-type: application/json
-
-      {
-            "nome": "Notebook Gamer",
-            "preco": 150
-      }
-
-      ###
       DELETE http://localhost:3001/produtos/1
       content-type: application/json
 
@@ -38,6 +29,7 @@
       GET http://localhost:3001/categoria
 
       ###
+      
       POST http://localhost:3001/categoria
       content-type: application/json
 
@@ -55,15 +47,6 @@
       }
 
       ###
-      PUT http://localhost:3001/categoria/1
-      content-type: application/json
-
-      {
-            "nome": "Consoles da Nintendo",
-            "descricao": "Consoles de uma única empresa a BIG N"
-      }
-
-      ###
       DELETE http://localhost:3001/categoria/1
       content-type: application/json
 
@@ -74,28 +57,73 @@
       ###
       POST http://localhost:3001/filme
       content-type: application/json
+
       {
-            "titulo": "O Máskara 2",
-            "duração_minutos": 202,
+            "titulo": "O Máskara",
+            "duração_minutos": 101,
             "descricao": "A vida do tímido e socialmente desajeitado bancário Stanley Ipkiss muda completamente quando ele encontra no mar uma máscara que possui o espírito do deus escandinavo Loki."
       }
 
       ###
       PATCH http://localhost:3001/filme/1
       content-type: application/json
+
       {
             "titulo": "O filho do do Máskara"
       }
 
       ###
-      PUT http://localhost:3001/filme/1
+      DELETE http://localhost:3001/filme/1
       content-type: application/json
+
+############## PESSOAS
+
+      GET http://localhost:3001/pessoa
+
+      ###
+      POST http://localhost:3001/pessoa
+      content-type: application/json
+
       {
-            "titulo": "O Máskara 2",
-            "duração_minutos": 202,
-            "descricao": "A vida do tímido e socialmente desajeitado bancário Stanley Ipkiss muda completamente quando ele encontra no mar uma máscara que possui o espírito do deus escandinavo Loki."
+            "nome": "Rodrigo Nascimento",
+            "idade": 38,
+            "escola": false
       }
 
       ###
-      DELETE http://localhost:3001/filme/1
+      PATCH http://localhost:3001/pessoa/1
       content-type: application/json
+
+      {
+            "nome": "Valentina Sousa"
+      }
+
+      ###
+      DELETE http://localhost:3001/pessoa/1
+      content-type: application/json
+
+############## POKÉMONS
+
+GET http://localhost:3001/pokemon
+
+POST http://localhost:3001/pokemon
+content-type: application/json
+
+{
+      "nome": "Gloom",
+      "nivel": 20,
+      "tipo": "Grama",
+      "treinador": "Érica"
+}
+
+###
+PATCH http://localhost:3001/pokemon/2
+content-type: application/json
+
+{
+      "nome": "Bellosom"
+}
+
+###
+DELETE http://localhost:3001/pokemon/1
+content-type: application/json
