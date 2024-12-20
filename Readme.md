@@ -1,7 +1,7 @@
 ## Application FullStack
 
     * NextJS --> Frontend
-        * CSS --> Tailwind
+    * CSS --> Tailwind
     * NestJS --> Backend
 
 > Como ficou no Web(Computador)
