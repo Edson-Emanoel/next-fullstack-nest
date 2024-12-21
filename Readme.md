@@ -143,6 +143,25 @@ npx nest g resource produto --no-spec
 npx nest g service prisma --flat --no-spec
 ```
 
+* No arquivo "db.module.ts" coloque o trecho:
+```
+exports: [PrismaService]
+```
+
+* No arquivo "prisma.service.ts" substitua a função para a seguinte função:
+```
+export class PrismaService extends PrismaClient implements OnModuleInit {
+    async onModuleInit() {
+        await this.$connect();
+    }
+}
+```
+
+* No arquivo "user.module.ts" adicione o trecho a seguir dentro do @Module({})
+```
+imports: [DbModule],
+```
+
 ## Ref.
 
 - Link do vídeo: https://www.youtube.com/watch?v=aouatZu9QiU
