@@ -12,7 +12,7 @@
 
 #### Comandos Front-end
 
-> ### Comando para criar o projeto frontend_**
+> ### Comando para criar o projeto frontend
 
 - criando aplicação frontend
 
