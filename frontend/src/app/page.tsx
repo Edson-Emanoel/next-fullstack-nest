@@ -11,13 +11,13 @@ export default function Home() {
   }, [])
 
   async function obterProdutos(){
-    const resp = await fetch("http://localhost:3001/produtos")
+    const resp = await fetch("http://localhost:3003/produtos")
     const produtos = await resp.json()
     setProdutos(produtos)
   }
 
   async function criarProduto() {
-    await fetch('http://localhost:3001/produtos', {
+    await fetch('http://localhost:3003/produtos', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export default function Home() {
   }
 
   async function alterarProduto() {
-    await fetch('http://localhost:3001/produtos/' + produto.id, {
+    await fetch('http://localhost:3003/produtos/' + produto.id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -41,14 +41,14 @@ export default function Home() {
   }
 
   async function excluirProduto(id: any) {
-    await fetch('http://localhost:3001/produtos/' + id, {
+    await fetch('http://localhost:3003/produtos/' + id, {
       method: 'DELETE'
     })
     await obterProdutos()
   }
 
   async function obterProdutoPorId(id: any) {
-    const resp = await fetch("http://localhost:3001/produtos/" + id)
+    const resp = await fetch("http://localhost:3003/produtos/" + id)
     const produto = await resp.json()
     setProduto(produto)
   }
@@ -108,13 +108,12 @@ export default function Home() {
   function renderizarProdutos(){
     return(
       <div className="flex flex-col gap-2">
-        <h2 className="text-3xl text-center">Cadastro de Produto</h2>
 
         {produtos.map((produto: any) => (
-          <div key={produto.id} className="flex gap-10 bg-slate-800 p-2 rounded-md">
+          <div key={produto.id} className="flex items-center gap-10 bg-slate-800 p-2 rounded-md">
             <div>{produto.nome}</div>
             <div>{produto.preco}</div>
-            <div>
+            <div className="flex gap-1">
               <button
                 onClick={() => obterProdutoPorId(produto.id)}
                 className="bg-green-500 p-2 rounded-md"
@@ -136,7 +135,7 @@ export default function Home() {
   }
 
   return(
-    <div className="gap-10 flex flex-col items-center justify-center h-screen">
+    <div className="gap-10 flex flex-col items-center justify-center h-screen text-white">
       {renderizarFormProdutos()}
       {renderizarProdutos()}
     </div>
