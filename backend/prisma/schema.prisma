@@ -38,6 +38,6 @@ model Pokemon{
   id Int @id @default(autoincrement())
   nome String
   tipo String
-  nivel String
+  nivel Int
   treinador String
 }

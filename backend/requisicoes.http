@@ -1,28 +1,28 @@
 ############## PRODUTOS
 
-      GET http://localhost:3001/produtos
+GET http://localhost:3001/produtos
 
-      ###
-      POST http://localhost:3001/produtos
-      content-type: application/json
+###
+POST http://localhost:3001/produtos
+content-type: application/json
 
-      {
-            "nome": "Notebook",
-            "descricao": "Notebook Top das galáxias",
-            "preco": 3500.00
-      }
+{
+      "nome": "Notebook",
+      "descricao": "Notebook Top das galáxias",
+      "preco": 3500.00
+}
 
-      ###
-      PATCH http://localhost:3001/produtos/1
-      content-type: application/json
+###
+PATCH http://localhost:3001/produtos/1
+content-type: application/json
 
-      {
-            "nome": "Notebook Gamer"
-      }
+{
+      "nome": "Notebook Gamer"
+}
 
-      ###
-      DELETE http://localhost:3001/produtos/1
-      content-type: application/json
+###
+DELETE http://localhost:3001/produtos/1
+content-type: application/json
 
 ############## CATEGORIAS
 
@@ -102,28 +102,29 @@
       DELETE http://localhost:3001/pessoa/1
       content-type: application/json
 
+
 ############## POKÉMONS
 
-GET http://localhost:3001/pokemon
+      GET http://localhost:3001/pokemon
 
-POST http://localhost:3001/pokemon
-content-type: application/json
+      POST http://localhost:3001/pokemon
+      content-type: application/json
 
-{
-      "nome": "Gloom",
-      "nivel": 20,
-      "tipo": "Grama",
-      "treinador": "Érica"
-}
+      {
+            "nome": "Gloom",
+            "nivel": 20,
+            "tipo": "Grama",
+            "treinador": "Érica"
+      }
 
-###
-PATCH http://localhost:3001/pokemon/2
-content-type: application/json
+      ###
+      PATCH http://localhost:3001/pokemon/2
+      content-type: application/json
 
-{
-      "nome": "Bellosom"
-}
+      {
+            "nome": "Bellosom"
+      }
 
-###
-DELETE http://localhost:3001/pokemon/1
-content-type: application/json
+      ###
+      DELETE http://localhost:3001/pokemon/1
+      content-type: application/json

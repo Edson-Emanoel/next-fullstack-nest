@@ -7,7 +7,15 @@ import { PrismaService } from 'src/db/prisma.service';
 export class ProdutoService {
   constructor(private readonly prismaService: PrismaService){}
 
-  create(createProdutoDto: CreateProdutoDto) {
+  async create(createProdutoDto: CreateProdutoDto) {
+    const productsExists = await this.prismaService.produto.findFirst({
+      where: { nome: createProdutoDto.nome }
+    })
+
+    if(productsExists){
+      throw new Error('Esse produto já existe')
+    }
+    
     return this.prismaService.produto.create({
       data: createProdutoDto,
     })
