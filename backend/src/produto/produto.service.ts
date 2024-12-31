@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateProdutoDto } from './dto/create-produto.dto';
 import { UpdateProdutoDto } from './dto/update-produto.dto';
 import { PrismaService } from 'src/db/prisma.service';
+import { ErrorProdutoNomeExistes } from './errors/ErrorProdutoNomeExistes';
+import { errorNotFound } from 'src/errors/errorNotFound';
 
 @Injectable()
 export class ProdutoService {
@@ -13,7 +15,7 @@ export class ProdutoService {
     })
 
     if(productsExists){
-      throw new Error('Esse produto já existe')
+      throw new ErrorProdutoNomeExistes(createProdutoDto.nome)
     }
     
     return this.prismaService.produto.create({
@@ -25,20 +27,44 @@ export class ProdutoService {
     return this.prismaService.produto.findMany();
   }
 
-  findOne(id: number) {
-    return this.prismaService.produto.findUnique({
+  async findOne(id: number) {
+    const produto = await this.prismaService.produto.findUnique({
       where: {id}
     });
+    
+    if(!produto){
+      throw new errorNotFound('Produto', 'id', id)
+    }
+
+    return produto
+
   }
 
-  update(id: number, updateProdutoDto: UpdateProdutoDto) {
+  async update(id: number, updateProdutoDto: UpdateProdutoDto) {
+    
+    const produto = await this.prismaService.produto.findUnique({
+      where: { id },
+    });
+
+    if(!produto){
+      throw new errorNotFound('Produto', 'id', id)
+    }
+
     return this.prismaService.produto.update({
       where: {id},
       data: updateProdutoDto
     });
   }
 
-  remove(id: number) {
+  async remove(id: number) {
+    const produto = await this.prismaService.produto.findUnique({
+      where: { id },
+    });
+
+    if(!produto){
+      throw new errorNotFound('Produto', 'id', id)
+    }
+
     return this.prismaService.produto.delete({
       where: {id}
     });

@@ -17,16 +17,16 @@ export class ProdutoModule implements OnModuleInit{
   ){}
 
   async onModuleInit() {
-    const products = new Array(100).fill(0).map((_, index) => index + 1);
+    // const products = new Array(100).fill(0).map((_, index) => index + 1);
 
-    await this.prismaService.produto.deleteMany();
+    // await this.prismaService.produto.deleteMany();
 
-    for (const produtoIndex of products){
-      await this.produtoService.create({
-        nome: `Product ${produtoIndex}`,
-        descricao: `Product ${produtoIndex}`,
-        preco: produtoIndex * 100
-      })
-    }
+    // for (const produtoIndex of products){
+    //   await this.produtoService.create({
+    //     nome: `Product ${produtoIndex}`,
+    //     descricao: `Product ${produtoIndex}`,
+    //     preco: produtoIndex * 100
+    //   })
+    // }
   }
 }

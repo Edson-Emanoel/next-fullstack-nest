@@ -2,12 +2,21 @@ import { Injectable } from '@nestjs/common';
 import { CreatePessoaDto } from './dto/create-pessoa.dto';
 import { UpdatePessoaDto } from './dto/update-pessoa.dto';
 import { PrismaService } from 'src/db/prisma.service';
+import { errorPessoaNomeExists } from './errors/errorPessoaNomeExists';
 
 @Injectable()
 export class PessoaService {
   constructor(private readonly prismaService:PrismaService){}
 
-  create(createPessoaDto: CreatePessoaDto) {
+  async create(createPessoaDto: CreatePessoaDto) {
+    const pessoaExists = await this.prismaService.pessoa.findFirst({
+      where: { nome: createPessoaDto.nome }
+    })
+
+    if(pessoaExists){
+      throw new errorPessoaNomeExists(createPessoaDto.nome);
+    }
+
     return this.prismaService.pessoa.create({
       data: createPessoaDto
     });

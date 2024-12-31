@@ -1,36 +1,36 @@
 ############## PRODUTOS
 
-GET http://localhost:3001/produtos
+      GET http://localhost:3003/produtos
 
-###
-POST http://localhost:3001/produtos
-content-type: application/json
+      ###
+      POST http://localhost:3003/produtos
+      content-type: application/json
 
-{
-      "nome": "Notebook",
-      "descricao": "Notebook Top das galáxias",
-      "preco": 3500.00
-}
+      {
+            "nome": "Notebook",
+            "descricao": "Notebook Top das galáxias",
+            "preco": 3500.00
+      }
 
-###
-PATCH http://localhost:3001/produtos/1
-content-type: application/json
+      ###
+      PATCH http://localhost:3003/produtos/1
+      content-type: application/json
 
-{
-      "nome": "Notebook Gamer"
-}
+      {
+            "nome": "Notebook Gamer"
+      }
 
-###
-DELETE http://localhost:3001/produtos/1
-content-type: application/json
+      ###
+      DELETE http://localhost:3003/produtos/1
+      content-type: application/json
 
 ############## CATEGORIAS
 
-      GET http://localhost:3001/categoria
+      GET http://localhost:3003/categoria
 
       ###
-      
-      POST http://localhost:3001/categoria
+
+      POST http://localhost:3003/categoria
       content-type: application/json
 
       {
@@ -39,7 +39,7 @@ content-type: application/json
       }
 
       ###
-      PATCH http://localhost:3001/categoria/1
+      PATCH http://localhost:3003/categoria/1
       content-type: application/json
 
       {
@@ -47,15 +47,15 @@ content-type: application/json
       }
 
       ###
-      DELETE http://localhost:3001/categoria/1
+      DELETE http://localhost:3003/categoria/1
       content-type: application/json
 
 ############## FILMES
 
-      GET http://localhost:3001/filme
+      GET http://localhost:3003/filme
 
       ###
-      POST http://localhost:3001/filme
+      POST http://localhost:3003/filme
       content-type: application/json
 
       {
@@ -65,7 +65,7 @@ content-type: application/json
       }
 
       ###
-      PATCH http://localhost:3001/filme/1
+      PATCH http://localhost:3003/filme/1
       content-type: application/json
 
       {
@@ -73,15 +73,15 @@ content-type: application/json
       }
 
       ###
-      DELETE http://localhost:3001/filme/1
+      DELETE http://localhost:3003/filme/1
       content-type: application/json
 
 ############## PESSOAS
 
-      GET http://localhost:3001/pessoa
+      GET http://localhost:3003/pessoa
 
       ###
-      POST http://localhost:3001/pessoa
+      POST http://localhost:3003/pessoa
       content-type: application/json
 
       {
@@ -91,23 +91,23 @@ content-type: application/json
       }
 
       ###
-      PATCH http://localhost:3001/pessoa/1
+      PATCH http://localhost:3003/pessoa/1
       content-type: application/json
 
       {
-            "nome": "Valentina Sousa"
+            "escola": "Não"
       }
 
       ###
-      DELETE http://localhost:3001/pessoa/1
+      DELETE http://localhost:3003/pessoa/1
       content-type: application/json
 
 
 ############## POKÉMONS
 
-      GET http://localhost:3001/pokemon
+      GET http://localhost:3003/pokemon
 
-      POST http://localhost:3001/pokemon
+      POST http://localhost:3003/pokemon
       content-type: application/json
 
       {
@@ -118,7 +118,7 @@ content-type: application/json
       }
 
       ###
-      PATCH http://localhost:3001/pokemon/2
+      PATCH http://localhost:3003/pokemon/2
       content-type: application/json
 
       {
@@ -126,5 +126,5 @@ content-type: application/json
       }
 
       ###
-      DELETE http://localhost:3001/pokemon/1
+      DELETE http://localhost:3003/pokemon/1
       content-type: application/json
